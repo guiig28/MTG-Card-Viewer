@@ -1,5 +1,11 @@
+import Nav from "./(components)/Nav";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Nav searchbar={true} />
+    </div>
+  );
 };
 
 export default Home;

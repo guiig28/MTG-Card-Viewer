@@ -26,6 +26,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer components {
+  .icon {
+    @apply stroke-gray-800 fill-transparent h-9 w-9 hover:stroke-gray-500 hover:cursor-pointer;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
