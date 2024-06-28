@@ -22,7 +22,8 @@ const Nav = ({ searchbar }: props) => {
               <SearchIcon className="w-5 h-5 absolute ml-3" />
               <input
                 type="search"
-                className="rounded-md pr-3 pl-10 py-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-500 focus:border-gray-500 w-full"
+                className="rounded-lg pr-3 pl-10 py-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-500 focus:border-gray-500 w-full placeholder:text-sm"
+                placeholder="Procurar carta..."
               />
             </div>
           </form>
