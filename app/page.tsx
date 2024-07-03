@@ -3,7 +3,7 @@ import Nav from "./(components)/Nav";
 
 const Home = () => {
   return (
-    <div className="flex-grow overflow-y-auto">
+    <div className="flex-1">
       <Nav searchbar={false} />
       <div className="flex flex-col justify-center items-center">
         <form className="w-96 max-[500px]:w-56">
