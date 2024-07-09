@@ -9,6 +9,7 @@
 # testing
 /coverage
 /public
+/(services)/(scryfall)
 
 # next.js
 /.next/
