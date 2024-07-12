@@ -5,6 +5,7 @@ import Nav from "../(components)/Nav";
 import * as Scry from "scryfall-sdk";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Pagination from "../(components)/Pagination";
 
 const Search = () => {
   const searchParams = useSearchParams();
@@ -12,7 +13,7 @@ const Search = () => {
 
   const [cardPages, setCardPages] = useState<[Scry.Card[]]>([[]]);
   const [paginationLength, setPaginationLength] = useState(1);
-  const [paginationIndex, setPaginationIndex] = useState(0);
+  const [paginationIndex, setPaginationIndex] = useState(1);
 
   useEffect(() => {
     const findCards = async () => {
@@ -39,21 +40,30 @@ const Search = () => {
   }, [searchName]);
 
   return (
-    <div className="flex-grow overflow-y-auto">
+    <>
       <Nav searchbar={true} value={searchName || undefined} />
-      <div className="flex flex-wrap mt-8 mx-80 gap-8 justify-center h-auto">
-        {cardPages[paginationIndex].map((card) => (
+
+      {/* Renderização das cartas (10 por página) */}
+      <div className="flex flex-grow flex-wrap mt-8 mx-80 gap-8 justify-center h-auto max-[870px]:mx-16 max-[300px]:mx-10">
+        {cardPages[paginationIndex - 1].map((card) => (
           <CardImg
             cardImgSrc={
               card.getImageURI("normal") || card.getBackImageURI("normal")
             }
             cardName={card.name}
             cardUrl={``}
-            key={cardPages[paginationIndex].indexOf(card)}
+            key={cardPages[paginationIndex - 1].indexOf(card)}
           />
         ))}
       </div>
-    </div>
+
+      {/* Paginação para renderização das cartas */}
+      <Pagination
+        paginationIndex={paginationIndex}
+        setPaginationIndex={setPaginationIndex}
+        paginationLength={paginationLength}
+      />
+    </>
   );
 };
 

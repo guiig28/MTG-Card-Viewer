@@ -15,12 +15,12 @@ const HomeSearchbar = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <form className="w-96 max-[500px]:w-56" onSubmit={handleSearch}>
-        <div className="flex mt-80">
+    <div className="flex flex-col flex-grow justify-center items-center">
+      <form className="w-96 max-[500px]:w-56 -mt-28" onSubmit={handleSearch}>
+        <div className="flex">
           <input
             type="search"
-            className="rounded-l-lg py-3 px-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-500 focus:border-gray-500 w-full"
+            className="rounded-l-lg py-3 px-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-400 focus:border-gray-400 w-full max-[500px]:text-sm max-[500px]:placeholder:text-sm"
             placeholder="Procurar carta..."
             value={searchName}
             required
@@ -30,7 +30,7 @@ const HomeSearchbar = () => {
           />
           <button
             type="submit"
-            className="py-3 px-4 border-y-2 border-r-2 border-gray-800 bg-gray-800 rounded-r-lg hover:bg-gray-500 hover:cursor-pointer"
+            className="py-3 px-4 border-y-2 border-r-2 border-gray-800 bg-gray-800 rounded-r-lg hover:bg-gray-400 hover:cursor-pointer"
           >
             <SearchIcon className="w-5 h-5 stroke-white" />
           </button>

@@ -28,7 +28,13 @@ body {
 
 @layer components {
   .icon {
-    @apply stroke-gray-800 fill-transparent h-9 w-9 hover:stroke-gray-500 hover:cursor-pointer;
+    @apply stroke-gray-800 fill-transparent h-9 w-9 hover:stroke-gray-400 hover:cursor-pointer;
+  }
+  .paginationIcon {
+    @apply border-2 size-8 max-[325px]:size-6 text-sm/8 max-[325px]:text-xs/6 text-center  rounded border-gray-800 text-gray-800 hover:border-gray-400 hover:cursor-pointer;
+  }
+  .paginationIconClicked {
+    @apply border-2 size-8 max-[325px]:size-6 text-sm/8 max-[325px]:text-xs/6 text-center  rounded border-gray-400 text-gray-400 cursor-default;
   }
 }
 

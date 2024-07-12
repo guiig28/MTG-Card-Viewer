@@ -31,11 +31,11 @@ const Nav = ({ searchbar, value }: props) => {
       <div className="flex items-center">
         {searchbar ? (
           <form onSubmit={handleSearch}>
-            <div className="relative flex items-center stroke-gray-800 focus-within:stroke-gray-500">
+            <div className="relative flex items-center stroke-gray-800 focus-within:stroke-gray-400">
               <SearchIcon className="w-5 h-5 absolute ml-3" />
               <input
                 type="search"
-                className="rounded-lg pr-3 pl-10 py-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-500 focus:border-gray-500 w-full placeholder:text-sm"
+                className="rounded-lg pr-3 pl-10 py-2 bg-transparent border-2 border-gray-800 focus:border-2 focus:ring-gray-400 focus:border-gray-400 w-full text-sm placeholder:text-sm"
                 placeholder="Procurar carta..."
                 value={searchName}
                 onChange={(ev) => {

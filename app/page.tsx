@@ -3,10 +3,10 @@ import Nav from "./(components)/Nav";
 
 const Home = () => {
   return (
-    <div className="flex-1">
+    <>
       <Nav searchbar={false} />
       <HomeSearchbar />
-    </div>
+    </>
   );
 };
 
