@@ -4,7 +4,7 @@ import CardImg from "../(components)/CardImg";
 import Nav from "../(components)/Nav";
 import * as Scry from "scryfall-sdk";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Pagination from "../(components)/Pagination";
 
 const Search = () => {
@@ -41,7 +41,7 @@ const Search = () => {
 
   return (
     <>
-      <Nav searchbar={true} value={searchName || undefined} />
+      <Nav searchbar value={searchName || undefined} />
 
       {/* Renderização das cartas (10 por página) */}
       <div className="flex flex-grow flex-wrap mt-8 mx-80 gap-8 justify-center h-auto max-[870px]:mx-16 max-[300px]:mx-10">
@@ -51,7 +51,7 @@ const Search = () => {
               card.getImageURI("normal") || card.getBackImageURI("normal")
             }
             cardName={card.name}
-            cardUrl={``}
+            cardUrl={`/Card/${card.id}`}
             key={cardPages[paginationIndex - 1].indexOf(card)}
           />
         ))}
