@@ -25,7 +25,7 @@ const CardImg = ({ cardName, cardImgSrc, cardUrl }: props) => {
       <Image
         alt={cardName}
         src={cardImgSrc}
-        className="h-auto rounded-2xl max-[690px]:w-60 max-[690px]:rounded-xl"
+        className="h-auto w-[488px] rounded-2xl max-[690px]:w-60 max-[690px]:rounded-xl"
         width={488}
         height={680}
       />

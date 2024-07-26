@@ -15,10 +15,19 @@ interface props {
 const Nav = ({ searchbar, value }: props) => {
   const router = useRouter();
   const [searchName, setSearchName] = useState(value);
+  const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
 
   const handleSearch = (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     router.push(`/Search?name=${searchName}`);
+  };
+
+  const handleDropdown = () => {
+    if (dropdownIsOpen) {
+      setDropdownIsOpen(false);
+    } else {
+      setDropdownIsOpen(true);
+    }
   };
 
   return (
@@ -47,8 +56,24 @@ const Nav = ({ searchbar, value }: props) => {
         ) : (
           ""
         )}
-        <div className="ml-5">
-          <MenuIcon />
+
+        {/* Menu Retrátil: */}
+        <div className="ml-5 relative">
+          <button onClick={handleDropdown}>
+            <MenuIcon menuOpen={dropdownIsOpen} />
+          </button>
+          {dropdownIsOpen && (
+            <div className="flex flex-col absolute right-0 top-14 w-40 border-2 border-gray-800 rounded-md text-center text-lg text-gray-800 shadow-lg">
+              <Link href="/Favorites">
+                <div className="py-2 cursor-pointer hover:text-gray-400">
+                  Favoritos
+                </div>
+              </Link>
+              <div className="py-2 cursor-pointer hover:text-gray-400 border-t-2 border-gray-800">
+                Github
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
